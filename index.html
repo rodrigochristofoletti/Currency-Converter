@@ -18,24 +18,30 @@
 
       <main id="main">
         <div id="div-label">
-          <label for="real">
+          <label for="currency-from">
             Convert <b>from</b>
-            <select name="real" id="real">
-                <option value="">R$ Real Brazilian</option>
+            <select name="currency-from" id="currency-from">
+                <option value="real">R$ Real Brazilian</option>
+                <option value="dollar">US$ US Dollar</option> 
+                <option value="euro">EUR - Euro</option>
+                <option value="pound">GPB British Pound</option>
+                <option value="bitcoin">XBT Bitcoin</option>
             </select>
           </label>
 
-          <label for="currency">
+          <label for="currency-select">
             Convert <b>to</b>
-            <select name="currency" id="dolar">
-                <option value="currency-dollar">US$ US Dollar</option> 
-                <option value="currency-euro">EUR - Euro</option>
-                <option value="currency-pound">GPB British Pound</option>
+            <select name="currency-select" id="currency-select">
+                <option value="dollar">US$ US Dollar</option> 
+                <option value="euro">EUR - Euro</option>
+                <option value="pound">GPB British Pound</option>
+                <option value="bitcoin">XBT Bitcoin</option>
+                <option value="real">R$ Real Brazilian</option>
                 </select>
           </label>
 
           <label for="amount">
-            Valor
+            Amount
             <input type="number" placeholder="R$ 10.000" id="user-input">
           </label>
 
@@ -44,17 +50,17 @@
 
         <div id="result-div">
             <div id="brazilian-flag">
-                <img src="./assets/brazilian currency.png" alt="Brazil flag">
-                <p class="p-currency-name" >Brazilian Real</p>
-                <p class="p-currency-value" id="brazilian-currency-value">R$ 0,00</p>
+                <img src="./assets/brazilian currency.png" alt="Brazil flag" id="converted-from-img">
+                <p class="p-currency-name convert-from-currency">Brazilian Real</p>
+                <p class="p-currency-value converted-from-value" id="brazilian-currency-value">R$ 0,00</p>
             </div>
             <div id="arrow">
                 <img src="./assets/vector.png" alt="arrow pointing down">
             </div>
             <div id="other-currency">
-                <img src="./assets/dolar currency.png" alt="Brazil flag">
-                <p class="p-currency-name">US$ US Dollar</p>
-                <p class="p-currency-value" id="other-currency-value">US$ 0,00</p>
+                <img src="./assets/dolar currency.png" alt="Brazil flag" id="currency-img">
+                <p class="p-currency-name converted-currency-name">US$ US Dollar</p>
+                <p class="p-currency-value converted-currency-value" id="other-currency-value">US$ 0,00</p>
             </div>
         </div>
       </main>
