@@ -54,6 +54,13 @@ function convertValues() {
     }).format(userInput / bitCoinValue);
   }
 
+  if (select.value == "real") {
+    otherCurrenciesValue.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(userInput / realValue);
+  }
+
   brazilianCurrencyValue.innerHTML = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
@@ -88,45 +95,8 @@ function changingConvertedCurrency() {
   convertValues();
 }
 
-function changingCurrency() {
-    if (selectCurrencyFrom.value == "real") {
-        convertedFromText.innerHTML = "Brazilian Real";
-        convertedFromImg.src = "./assets/brazilian currency.png";
-        input.placeholder = "R$ 0.00"
-        convertedFromValue.innerHTML = "R$ 0,00"
-        
-      }
 
-    if (selectCurrencyFrom.value == "dollar") {
-        convertedFromText.innerHTML = "USD Dollar";
-        convertedFromImg.src = "./assets/dolar currency.png";
-        input.placeholder = "USD 0.00"
-        convertedFromValue.innerHTML = "US$ 0,00"
-
-      }
-    
-      if (selectCurrencyFrom.value == "euro") {
-        convertedFromText.innerHTML = "EUR euro";
-        convertedFromImg.src = "./assets/euro currency.png";
-        input.placeholder = "€ 0.00"
-        convertedFromValue.innerHTML = "0,00 €"
-      }
-    
-      if (selectCurrencyFrom.value == "pound" ) {
-        convertedFromText.innerHTML = "GBP pound";
-        convertedFromImg.src = "./assets/libra.png";
-        input.placeholder = "£ 0.00"
-        convertedFromValue.innerHTML = "£0.00"
-      }
-    
-      if (selectCurrencyFrom.value == "bitcoin") {
-        convertedFromText.innerHTML = "XBT bitcoin";
-        convertedFromImg.src = "./assets/bitcoin.png";
-        input.placeholder = "XBT 0.00"
-        convertedFromValue.innerHTML = "XBT 0.00"
-      }
-}
 
 convertButton.addEventListener("click", convertValues);
 select.addEventListener("change",changingConvertedCurrency);
-selectCurrencyFrom.addEventListener("change",changingCurrency);
+
