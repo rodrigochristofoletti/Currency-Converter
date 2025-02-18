@@ -7,19 +7,27 @@
 }
 
 #div-master {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #8a51fc;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 30px;
 }
 
 #top-img {
   width: 150px;
   height: 150px;
   margin-bottom: 30px;
+}
+
+#converter-text {
+  padding-bottom: 30px;
+  font-size: 25px;
+  letter-spacing: 2px;
+  display: none;
 }
 
 #main {
@@ -118,4 +126,14 @@ button {
 button:hover {
   opacity: 0.9;
   cursor: pointer;
+}
+
+@media (max-width: 768px) { /* Adjust the width as needed */
+  #top-img {
+    display: none;
+  }
+
+  #converter-text{
+    display: block;
+  }
 }
